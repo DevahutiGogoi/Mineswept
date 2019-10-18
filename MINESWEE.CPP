@@ -49,6 +49,18 @@ void highscore(char nam[30], int scr)
      }
 
 
+void comment()
+{ char cmt[999];
+	gotoxy(28,20);
+	cout<<"Please let us know your feedback regarding the game: ";
+	scanf("%s", cmt);
+	delay(50);
+	clrscr();
+	gotoxy(28,20);
+	cout<<"Thank You!!";
+	delay(100);
+	exit(0);
+	}
 void display()
      {  void play(void);
 	void menu(void);
@@ -310,7 +322,8 @@ void menu()
 	cout<<"\n1. Rules and instructions";
 	cout<<"\n2. Continue to game";
 	cout<<"\n3. Scoreboard";
-	cout<<"\n4. Exit";
+	cout<<"\n4. Comment";
+	cout<<"\n5. Exit"
 	cout<<"\n\n Enter your option: ";
 	cin>>opt;
 	if(opt==1)
@@ -322,6 +335,8 @@ void menu()
 	  }
 	else if(opt==3)
 	    display();
+	else if(opt==4)
+	    comment();
 	else
 	   exit(0);
      }
