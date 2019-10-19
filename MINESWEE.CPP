@@ -48,7 +48,6 @@ void highscore(char nam[30], int scr)
 	info.close();
      }
 
-
 void comment()
 { char cmt[999];
 	gotoxy(28,20);
@@ -60,7 +59,12 @@ void comment()
 	cout<<"Thank You!!";
 	delay(100);
 	exit(0);
-	}
+}
+void quit()
+{
+	comment();
+	exit(0);
+}
 void display()
      {  void play(void);
 	void menu(void);
@@ -178,7 +182,9 @@ void play()
 	     gotoxy(36,20);
 	     cout<<" ";
 	     if(input<1||input>25)
-		count++;
+		    count++;
+		else if(input==0)
+		   quit();
 	     score=score+10;
 
 	     for( j=28; j<48; j=j+4 )
@@ -231,6 +237,7 @@ void rules()
 	cout<<"\n2. Do not type the same number that has been typed before.";
 	cout<<"\n3. You get 10 points if your input survives. There are 4 bombs hidden in the       grid.";
 	cout<<"\n4. You can score a maximum of 210 points. Once this score is achieved, you will    be declared as the winner!";
+	cout<<"\n5. In case you want to quit in the middle of the game, enter 0. You will be directed to the feedback page!";
 	cout<<"\n\nDo you want to continue? (Y/N): ";
 	cin>>ch;
 	if(ch=='y'|| ch=='Y')
